@@ -1,0 +1,123 @@
+---
+title: Welcome to LuLu CHU
+description: An overview of the LuLu CHU documentation platform, designed to help you organize and manage project documentation efficiently.
+---
+
+## Overview
+
+LuLu CHU is a modern documentation platform that empowers you to create, organize, and publish high-quality docs for your projects. You build interactive documentation sites using MDX, with built-in support for components like tabs, steps, and code groups. Customize themes, enable search, and collaborate seamlessly with your team.
+
+This platform handles hosting, versioning, and SEO, so you focus on content. Whether you document APIs, SDKs, or user guides, LuLu CHU scales with your needs.
+
+## Key Features
+
+LuLu CHU offers powerful tools to streamline your documentation workflow.
+
+<Columns cols={3}>
+  <Card title="Interactive Components" icon="components" href="#">
+    Use `<Tabs>`, `<Steps>`, and `<CodeGroup>` to create engaging, interactive docs that guide users effectively.
+  </Card>
+  <Card title="Version Control" icon="git-branch" href="#">
+    Track changes, preview updates, and roll back versions without leaving your editor.
+  </Card>
+  <Card title="Customizable Themes" icon="palette" href="#">
+    Apply your brand colors, like `#3B82F6`, and customize layouts for a unique look.
+  </Card>
+</Columns>
+
+<Columns cols={2}>
+  <Card title="Full-Text Search" icon="search" href="#">
+    Users find information instantly across all docs with smart, fuzzy search.
+  </Card>
+  <Card title="Team Collaboration" icon="users" href="#">
+    Invite contributors, assign roles, and review changes in real-time.
+  </Card>
+</Columns>
+
+<Callout kind="tip">
+  Start small: Import your existing Markdown files and enhance them with components gradually.
+</Callout>
+
+## How to Get Started
+
+Follow these steps to launch your first documentation site.
+
+<Steps>
+  <Step title="Create Account" icon="user-plus">
+    Sign up at `lulu-chu.com` with your email or GitHub account. Verify your email to unlock full features.
+  </Step>
+  <Step title="Import Repository" icon="upload-cloud">
+    Connect your GitHub repo or upload MDX files directly. LuLu CHU auto-generates your site structure.
+  </Step>
+  <Step title="Customize & Publish" icon="rocket">
+    Edit frontmatter, add components, and hit publish. Your site goes live at a custom subdomain.
+  </Step>
+</Steps>
+
+## Platform-Specific Setup
+
+Choose your preferred method based on your stack.
+
+<Tabs>
+  <Tab title="npm Projects" icon="package">
+    Install the CLI for local development:
+
+    <CodeGroup tabs="npm,yarn">
+```bash
+npm init lulu-chu@latest my-docs
+```
+```bash
+yarn create lulu-chu my-docs
+```
+    </CodeGroup>
+
+    Run `npm run dev` to preview changes.
+  </Tab>
+  <Tab title="GitHub" icon="github">
+    Use the GitHub Action for CI/CD:
+
+````yaml
+# .github/workflows/docs.yml
+name: Deploy Docs
+on: [push]
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: npx lulu-chu deploy
+````
+
+    Push to trigger automatic deploys.
+  </Tab>
+  <Tab title="Vercel" icon="cloud">
+    Deploy directly from your repo dashboard. Set build command to `npx lulu-chu build`.
+  </Tab>
+</Tabs>
+
+## Advanced Configuration
+
+<Expandable title="Environment Variables" default-open="false">
+
+Configure your site with these common variables:
+
+| Variable       | Description                          | Example Value          |
+|----------------|--------------------------------------|------------------------|
+| `NEXT_PUBLIC_API_URL` | Base API endpoint                  | `https://api.example.com` |
+| `LUCHU_THEME_COLOR`  | Primary brand color                 | `#3B82F6`             |
+| `SEARCH_ENABLED`     | Enable full-text search             | `true`                 |
+
+Set them in your `.env.local` file.
+</Expandable>
+
+## Next Steps
+
+Explore the sidebar for guides on components, API docs, and customization. Build your first page today and experience efficient documentation management.
+
+```mermaid
+graph LR
+    A[Sign Up] --> B[Import Repo]
+    B --> C[Add Components]
+    C --> D[Publish Site]
+    D --> E[Share & Collaborate]
+```

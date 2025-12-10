@@ -1,0 +1,132 @@
+---
+title: Changelog
+description: Track the latest updates, new features, and improvements in LuLu CHU.
+---
+
+## Overview
+
+LuLu CHU delivers regular updates to enhance your documentation experience. You receive new features, performance improvements, and bug fixes through automated releases. Review this changelog to stay informed about changes and plan your upgrades.
+
+<Columns cols={3}>
+  <Card title="Latest Release" icon="zap" href="#latest">
+    v1.2.0 - Real-time collaboration and faster rendering.
+  </Card>
+  <Card title="Upgrade Guide" icon="download" href="#upgrade">
+    Step-by-step instructions for all platforms.
+  </Card>
+  <Card title="Report Issues" icon="github" href="https://github.com/luluchu/docs/issues" target="_blank">
+    Found a bug? Submit it here.
+  </Card>
+</Columns>
+
+## Recent Releases
+
+<Update label="2024-10-15" description="v1.2.0" tags={["feature", "bugfix"]}>
+
+## New Features
+
+- Added real-time collaboration for multi-user editing sessions.
+- Introduced dark mode toggle with automatic system preference detection.
+
+## Improvements
+
+- Optimized page rendering by `>30%` for large documentation sites.
+- Enhanced search with fuzzy matching and typo tolerance.
+
+## Bug Fixes
+
+- Fixed markdown parsing errors with nested lists.
+- Resolved mobile sidebar navigation glitches.
+
+To upgrade, run the latest installation command in your project.
+
+<CodeGroup tabs="npm,yarn">
+```bash
+npm install lulu-chu@latest
+```
+```bash
+yarn add lulu-chu@latest
+```
+</CodeGroup>
+
+</Update>
+
+<Update label="2024-09-20" description="v1.1.0" tags={["feature", "improvement"]}>
+
+## New Features
+
+- Integrated Mermaid diagram support with live preview.
+- Added custom theme builder for brand colors like `#3B82F6`.
+
+## Improvements
+
+- Streamlined component library with 20+ new icons.
+- Better error handling for invalid MDX syntax.
+
+## Bug Fixes
+
+- Corrected frontmatter parsing for multi-line descriptions.
+- Fixed anchor link jumping on scroll.
+
+</Update>
+
+<Update label="2024-08-10" description="v1.0.0" tags={["breaking", "feature"]}>
+
+## Initial Release
+
+- Core MDX documentation engine with full component support.
+- Built-in navigation, search, and deployment previews.
+- Support for YAML frontmatter, custom components, and syntax highlighting.
+
+**Breaking Changes:** Initial setup requires Node.js `>=18`. Migrate from legacy configs by updating your `{package.json}` dependencies.
+
+</Update>
+
+## Upgrade Process
+
+Follow these steps to update LuLu CHU safely.
+
+<Steps>
+  <Step title="Backup Your Site" icon="database">
+    Create a full backup of your documentation repository.
+  </Step>
+  <Step title="Check Compatibility">
+    Review release notes for breaking changes.
+  </Step>
+  <Step title="Install Update">
+    <Tabs>
+      <Tab title="npm" icon="package">
+        ```bash
+        npm install lulu-chu@latest
+        npm run build
+        ```
+      </Tab>
+      <Tab title="yarn" icon="package">
+        ```bash
+        yarn add lulu-chu@latest
+        yarn build
+        ```
+      </Tab>
+    </Tabs>
+  </Step>
+  <Step title="Test Locally" icon="play-circle">
+    Run `npm run dev` and verify all pages render correctly.
+  </Step>
+</Steps>
+
+<Callout kind="tip">
+  Always test updates in a staging environment before production deployment. Use `lulu-chu --dry-run` to simulate changes.
+</Callout>
+
+## Upcoming Changes
+
+<ExpandableGroup>
+  <Expandable title="v1.3.0 Preview" default-open="false">
+    Plan for AI-assisted content generation and advanced analytics. Expect beta access in November 2024. Key features include auto-summaries for long pages and usage heatmaps.
+  </Expandable>
+  <Expandable title="Breaking Changes in v2.0">
+    Migration to a new rendering engine drops legacy browser support (`<IE11`). Prepare by auditing your `{browserslist}` config.
+  </Expandable>
+</ExpandableGroup>
+
+Stay tuned for more updates that make managing your LuLu CHU documentation faster and more powerful.

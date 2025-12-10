@@ -1,0 +1,128 @@
+---
+title: Quick Start Guide
+description: Get up and running with LuLu CHU by setting up your first documentation space in minutes.
+---
+
+## Overview
+
+LuLu CHU lets you create organized documentation spaces for your projects. Follow these steps to sign up, configure your workspace, and publish your first document. You complete setup in under five minutes.
+
+<Callout kind="tip">
+  Use your brand color `#3B82F6` in custom themes for a professional look.
+</Callout>
+
+## Create Your Account
+
+Start by signing up for a free LuLu CHU account.
+
+<Steps>
+  <Step title="Visit the Site" icon="globe">
+    Go to the [LuLu CHU homepage](https://lulu-chu.com) and click **Sign Up**.
+  </Step>
+  <Step title="Enter Details" icon="user-plus">
+    Provide your email, create a strong password, and verify your account via email.
+  </Step>
+  <Step title="Complete Profile" icon="check-circle">
+    Add your name and workspace name, like `MyProjectDocs`.
+  </Step>
+</Steps>
+
+## Set Up Your Initial Workspace
+
+After logging in, configure your default workspace.
+
+<Tabs>
+  <Tab title="Web Dashboard" icon="monitor">
+    From the dashboard, select **New Workspace**.
+
+    Set properties:
+
+    | Property     | Value Example              |
+    |--------------|----------------------------|
+    | Name         | `API Documentation`        |
+    | Description  | `REST API reference site`  |
+    | Brand Color  | `#3B82F6`                  |
+
+    Click **Create**.
+  </Tab>
+  <Tab title="CLI Setup" icon="terminal">
+    Install the LuLu CHU CLI:
+
+    <CodeGroup tabs="npm,yarn">
+```bash
+npm install -g @lulu-chu/cli
+```
+```bash
+yarn global add @lulu-chu/cli
+```
+    </CodeGroup>
+
+    Initialize your workspace:
+
+````bash
+lulu-chu init my-workspace --color #3B82F6
+````
+  </Tab>
+</Tabs>
+
+<Callout kind="info">
+  Workspaces support unlimited documents and custom domains on paid plans.
+</Callout>
+
+## Add Your First Document
+
+Create and publish a document using MDX.
+
+<Steps>
+  <Step title="New Document" icon="file-plus">
+    In your workspace, click **New Doc** and name it `quickstart.mdx`.
+  </Step>
+  <Step title="Add Frontmatter" icon="edit-3">
+    Insert YAML frontmatter at the top:
+
+````mdx
+---
+title: My First Doc
+description: Welcome to my documentation.
+---
+````
+  </Step>
+  <Step title="Write Content" icon="pen-tool">
+    Add a heading and code example:
+
+````mdx
+## Hello World
+
+```javascript
+console.log("LuLu CHU rocks!");
+```
+````
+
+    Preview changes live.
+  </Step>
+  <Step title="Publish" icon="upload-cloud">
+    Click **Publish** to make it live. Share the URL: `https://yourspace.lulu-chu.com/quickstart`.
+  </Step>
+</Steps>
+
+## Next Steps
+
+Explore more features to enhance your docs.
+
+<Columns cols={3}>
+  <Card title="Customize Themes" icon="palette" href="/docs/themes">
+    Apply your brand color `#3B82F6` and custom layouts.
+  </Card>
+  <Card title="API Integration" icon="code" href="/docs/api">
+    Embed dynamic content with REST endpoints.
+  </Card>
+  <Card title="Collaborate" icon="users" href="/docs/teams">
+    Invite team members and manage permissions.
+  </Card>
+</Columns>
+
+<Expandable title="Troubleshooting Common Issues" default-open="false">
+  - **Login fails?** Clear browser cache or use incognito mode.
+  - **CLI errors?** Run `lulu-chu doctor` to diagnose.
+  - **Docs not updating?** Wait 30 seconds for build cache.
+</Expandable>
